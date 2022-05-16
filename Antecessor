@@ -1,0 +1,15 @@
+#include <stdio.h> //funções como o printf e scanf
+#include <locale.h> //necessário para usar o setlocale
+
+int main(){
+    int n;
+    setlocale(LC_ALL, "Portuguese"); //colocar acentuação nas strings
+
+    printf("Digite um número: ");
+    scanf("%d",&n);
+
+    printf("O antecessor de %d é: %d",n,n-1);
+
+    return(0);
+
+}
