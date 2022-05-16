@@ -1,0 +1,18 @@
+#include <stdio.h> //funções como o printf e scanf
+#include <locale.h> //necessário para usar o setlocale
+
+int main(){
+  int h,r;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Qual a altura (em cm) do seu cilindro? ");
+  scanf("%d",&h);
+  printf("Qual é o raio (em cm) do seu cilindro? ");
+  scanf("%d",&r);
+
+  printf("A área do seu cilindro é de %.2f centímetro(s) quadrado(s)",2*3.1416*r*(h+r));
+  printf("O volume do seu cilindro é de %.2f centímetro(s) cúbicos(s)",3.1416*(r*r)*h);
+
+  return 0;
+
+}
