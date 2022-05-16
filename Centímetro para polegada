@@ -1,0 +1,15 @@
+#include <stdio.h> //funções como o printf e scanf
+#include <locale.h> //necessário para usar o setlocale
+
+int main(){
+  float medida;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Digite uma medida em cm: ");
+  scanf("%f",&medida);
+  printf("%.2f centímetros equivale a %.2f polegadas",medida,(medida/2.54));
+
+
+  return 0;
+
+}
