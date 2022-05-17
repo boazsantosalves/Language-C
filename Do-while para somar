@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+/*Escreva um programa que leia um número indeterminado de valores (até que
+o usuário digite o zero). Calcule e mostre a soma dos números.*/
+
+
+int main(){
+  int n,soma;
+  setlocale(LC_ALL,"Portuguese");
+
+  soma=0;
+  do{
+        printf("Digite um número: ");
+        scanf("%d",&n);
+        soma=soma+n;
+
+
+  }while(n!=0);
+
+  printf("Oops, ciclo encerrado \n");
+  printf("Soma dos números digitados: %d \n",soma);
+
+
+  return 0;
+
+}
