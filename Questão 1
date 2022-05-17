@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <math.h>
+
+/*Caminhão - Boaz*/
+
+
+int main(){
+  int c_estado,c_carga;
+  float peso_carga,imposto, preco_carga;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Digite o código do estado: ");
+  scanf("%d",&c_estado);
+  printf("Digite, em toneladas, o peso da carga: ");
+  scanf("%f",&peso_carga);
+  printf("Digite o código da carga: ");
+  scanf("%d",&c_carga);
+  printf("\n");
+
+  //convertendo t para kg.
+  peso_carga = peso_carga*1000;
+
+  //Calculando o preço da carga
+  if(c_carga>=10 && c_carga<=20){
+    preco_carga = peso_carga*100;
+  }
+  if(c_carga>=21 && c_carga<=30){
+    preco_carga = peso_carga*250;
+  }
+  if(c_carga>=31 && c_carga<=40){
+    preco_carga = peso_carga*340;
+  }
+
+  //Calculando o valor do imposto
+  if(c_estado==1){
+    imposto = preco_carga*0.25;
+  }
+  if(c_estado==2){
+    imposto = preco_carga*0.15;
+  }
+  if(c_estado==3){
+    imposto = preco_carga*0.05;
+  }
+  if(c_estado==4){
+    imposto = 0;
+  }
+
+  //Mostrando dados pedidos na questão
+  printf("\nO caminhão está carregando %.2f kg",peso_carga);
+  printf("\nPreço da carga do caminhão: R$ %.2f",preco_carga);
+  if(c_estado==4){
+        printf("\nImposto: isento de imposto");
+  }
+  else{
+        printf("\nImposto: R$ %.2f",imposto);
+  }
+  printf("\nValor total: R$ %.2f",preco_carga+imposto);
+
+  return 0;
+
+}
