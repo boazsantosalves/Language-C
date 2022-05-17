@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <math.h>
+
+/*Concatenação de strings*/
+
+
+int main(){
+  int i, cont;
+  char str[100]="",numero[20],nome1[20]="Boaz", nome2[20]="Alves";
+  setlocale(LC_ALL,"Portuguese");
+
+  i=1;
+  cont=0;
+  while(i!=0){
+    printf("Digite um número. Obs: 0 para encerrar o ciclo. \n");
+    scanf("%s",&numero);
+
+    if(strcmp(numero,"0")==0){
+            i=0;
+            break;
+    }
+
+    if(cont>0){
+        strcat(str,", ");
+        strcat(str,numero);
+    }
+    else{
+        strcat(str,numero); //se for o primeiro ciclo, não coloco " ," na string.
+    }
+    cont++;
+  }
+
+  printf("%s",str);
+
+  return 0;
+
+}
