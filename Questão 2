@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <math.h>
+
+/*Investimentos - Boaz*/
+
+
+int main(){
+  int meses=0;
+  float salario_joaquim,salario_antonio;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Joaquim, informe seu salário: ");
+  scanf("%f",&salario_joaquim);
+
+  //Salário do Antônio.
+  salario_antonio = salario_joaquim/3;
+
+  while(salario_antonio<salario_joaquim){
+
+    salario_joaquim = salario_joaquim + salario_joaquim*0.02;
+    salario_antonio = salario_antonio + salario_antonio*0.05;
+    meses++;
+
+  }
+  printf("Quantidade de meses para o salário de Antônio ser maior ou igual ao de Joaquim: %d",meses);
+  return 0;
+
+}
