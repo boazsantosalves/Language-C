@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+
+
+
+int main(){
+  char n[20];
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Digite uma palavra: ");
+  scanf("%s",&n);
+  
+  if(strcmp(n,"oi")==0){
+    printf("%s",n);
+  }
+
+
+
+  return 0;
+
+}
