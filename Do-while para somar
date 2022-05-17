@@ -7,20 +7,31 @@ o usuário digite o zero). Calcule e mostre a soma dos números.*/
 
 
 int main(){
-  int n,soma;
+  int n,soma,cont;
   setlocale(LC_ALL,"Portuguese");
 
   soma=0;
+  cont=0;
   do{
         printf("Digite um número: ");
         scanf("%d",&n);
         soma=soma+n;
+        if(n!=0){
+                cont++;
+        }
 
 
   }while(n!=0);
 
-  printf("Oops, ciclo encerrado \n");
-  printf("Soma dos números digitados: %d \n",soma);
+  printf("Oops, ciclo encerrado !!!\n");
+
+  if(cont==0){
+    printf("Você não digitou nenhum número além do zero!");
+  }
+  else{
+    printf("Soma dos números digitados: %d \n",soma);
+    printf("Média dos números digitados: %d \n",soma/cont);
+  }
 
 
   return 0;
