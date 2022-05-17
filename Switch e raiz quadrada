@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>//necessária para usar as funções matemáticas
+
+
+
+int main(){
+  int n,a,b;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf ("Menu de opções: \n1 - Somar dois números \n2 - Raiz quadrada de um número \nDigite a opção desejada: ");
+  scanf("%d",&n);
+  switch(n){
+    case 1:
+        printf("Digite o primeiro número: ");
+        scanf("%d",&a);
+        printf("Digite o segundo número: ");
+        scanf("%d",&b);
+
+        printf("A soma entre eles é %d",a+b);
+        break;
+    case 2:
+        printf("Digite um número: ");
+        scanf("%d",&a);
+
+        printf("A raiz quadrada é: %.2f",sqrt(a));
+        break;
+    default:
+        printf ("Valor invalido!\n");
+
+
+  }
+
+
+
+
+
+  return 0;
+
+}
