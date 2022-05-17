@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <math.h>
+
+/*Quadrado por soma dos ímpares - Boaz*/
+
+
+int main(){
+  int n,i,soma,impares;
+  char str[200]="", text[20];
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Digite um valor para N: ");
+  scanf("%d",&n);
+
+  //Calculando o quadrado
+  soma=0;
+  i=1;
+  impares=0;
+
+  while(impares<n){
+    if(i%2!=0){
+
+        soma = soma+i;
+        impares++;
+
+        //Construindo a string
+        sprintf(text, "%d", i);
+
+        if(impares==1){
+            strcat(str,text);
+        }
+
+        if(impares>1){
+            strcat(str," + ");
+            strcat(str,text);
+        }
+
+    }
+    i++;
+
+  }
+
+  printf("\n");
+  printf("Quadrado = %s = %d",str,soma);
+  printf("\n");
+  return 0;
+
+}
