@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+/*Um determinado material radioativo...*/
+
+
+int main(){
+  int t,i;
+  float m;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf("Digite a massa(g) do material: ");
+  scanf("%f",&m);
+  printf("Massa inicial: %.2f \n",m);
+
+  t=0;
+  i=0;
+  while(m>=0.5){
+        m=m/2;
+        t=t+50;
+  }
+
+  printf("Massa final: %.2f \n",m);
+  printf("Tempo: %d segundos",t);
+
+
+
+  return 0;
+
+}
