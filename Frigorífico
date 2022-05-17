@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+#include <math.h>
+
+/*Frigorífico*/
+
+
+int main(){
+  int i,cont;
+  char numero[20],n_maior[20],n_menor[20];
+  float peso,maior_peso,menor_peso;
+  setlocale(LC_ALL,"Portuguese");
+
+  i=1;
+  cont=0;
+  maior_peso=0.0;
+  menor_peso=pow(10,7);
+  while(i!=2){
+    printf("1 - Adicionar boi\n");
+    printf("2 - Sair e checar dados\n\n");
+    printf("Escolha uma opção: ");
+    scanf("%d",&i);
+    printf("\n\n");
+
+    if(i==1){
+        cont++;
+        printf("Digite um número de identificação do animal: ");
+        scanf("%s",&numero);
+        printf("Digite o peso do animal: ");
+        scanf("%f",&peso);
+        printf("\n\n");
+
+        if(peso>maior_peso){
+            strcpy(n_maior,numero); //Guardar uma string numa variável
+            maior_peso=peso;
+        }
+        if(peso<menor_peso){
+            strcpy(n_menor,numero); //Guardar uma string numa variável
+            menor_peso=peso;
+        }
+    }
+    if(i!=1 && i!=2){
+        printf("Opção não encontrada \n\n");
+    }
+  }
+
+  if(cont>0){
+    printf("Relatório \n\n");
+    printf("Boi mais gordo:\n");
+    printf("Número: %s Peso: %.2f\n\n",n_maior,maior_peso);
+
+    printf("Boi mais magro:\n");
+    printf("Número: %s  Peso: %.2f\n\n",n_menor,menor_peso);
+
+  }
+  else{
+    printf("Não foi possível obter o relatório, pois nenhum boi foi cadastrado");
+  }
+
+
+
+  return 0;
+
+}
