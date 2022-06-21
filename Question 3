@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <locale.h>
+
+
+int main(){
+  int n1,n2,aux1,aux2,condicao=1,soma=0;
+  setlocale(LC_ALL,"Portuguese");
+
+  printf ("Digite o primeiro número: ");
+  scanf("%d", &n1);
+  aux1 = n1;
+  printf ("Digite o segundo número: ");
+  scanf("%d", &n2);
+  aux2 = n2;
+
+  printf ("Calculando o produto entre os dois números... \n");
+
+  while(condicao==1){
+    // Se n1==1, n2 entra na soma e o loop para.
+    if(n1==1){
+        soma=soma+n2;
+        condicao=0;
+    }
+    else{
+        //Se n1 for ímpar, n2 entra na soma e o loop continua.
+        if(n1%2==1){
+            soma=soma+n2;
+        }
+
+    }
+
+    n1=n1/2;
+    n2=n2*2;
+  }
+
+  printf ("%d * %d = %d",aux1,aux2,soma);
+
+
+  return 0;
+
+}
