@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <locale.h>
+
+
+int main(){
+    int tipo=1, total, luxo_total=0, stand_total=0, luxo, stand;
+    setlocale(LC_ALL,"Portuguese");
+
+
+    while(tipo){
+        printf("-----------MENU-----------\n");
+        printf("0 - Sair do Programa.\n");
+        printf("1 - Rádio Standard.\n");
+        printf("2 - Rádio de Luxo.\n\n");
+
+        printf("Digite o número correspondente ao tipo do rádio: ");
+        scanf("%d",&tipo);
+
+        if(tipo==0){
+            printf("\n----Programa finalizado----\n");
+            break;
+        }
+
+        if(tipo==1){
+            printf("Digite a quantidade de rádios standards vendidos: ");
+            scanf("%d",&stand);
+            stand_total = stand_total + stand;
+        }
+
+        if(tipo==2){
+            printf("Digite a quantidade de rádios de luxo vendidos: ");
+            scanf("%d",&luxo);
+            luxo_total = luxo_total + luxo;
+        }
+
+        if(tipo!=1 && tipo!=2){
+            printf("Opção não encontrada, tente novamente.");
+        }
+
+        printf("\n");
+
+    }
+
+    total = stand_total + luxo_total;
+    if(total==0){
+        printf("Nenhuma venda cadastrada.");
+    }
+    else{
+        printf("Total de peças standard: %d\n",stand_total);
+        printf("Total de peças luxo: %d\n",luxo_total);
+        printf("Total de peças vendidas: %d\n",total);
+    }
+
+
+
+
+  return 0;
+
+}
